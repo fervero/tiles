@@ -1,0 +1,20 @@
+@import '../styles/index.scss';
+
+.tile {
+	height: 20em;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	overflow: scroll;
+	overflow-x: hidden;
+	color: $gray-800;
+}
+
+.tile__header {
+	font-size: 1.25rem;
+	color: $gray-900;
+}
+
+.list-group-header {
+	@extend .h6;
+	padding-left: 1.25rem;
+}

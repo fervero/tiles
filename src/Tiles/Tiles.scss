@@ -1,0 +1,7 @@
+@import '../styles/index.scss';
+
+.tiles_container {
+	@extend .col-12;
+	@extend .col-sm-6;
+	@extend .col-lg-4;
+}
