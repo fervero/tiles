@@ -6030,7 +6030,7 @@ body {
   background-color: #f8f9fa; }
 
 .tile {
-  height: 20em;
+  max-height: 20em;
   margin-bottom: 1rem;
   padding: 1rem;
   overflow: scroll;
@@ -6049,23 +6049,24 @@ body {
   display: inline-block;
   vertical-align: middle; }
 
-.tile__btn {
+.btn.tile__btn {
   width: 15%;
-  padding: 5px 0 0;
+  height: 1.6em;
+  padding: 2px 0 0;
   box-sizing: border-box;
   display: inline-block;
   align-self: center; }
 
-.example-enter {
+.item__transition-enter {
   opacity: 0.01; }
 
-.example-enter.example-enter-active {
+.item__transition-enter.item__transition-enter-active {
   opacity: 1;
-  transition: opacity 1500ms ease-in; }
+  transition: opacity 300ms ease-in; }
 
-.example-leave {
+.item__transition-leave {
   opacity: 1; }
 
-.example-leave.example-leave-active {
+.item__transition-leave.item__transition-leave-active {
   opacity: 0.01;
-  transition: opacity 1500ms ease-in; }
+  transition: opacity 300ms ease-out; }

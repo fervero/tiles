@@ -5,7 +5,7 @@ const STATUS_100 = {
 	codes: [
 		{ code: 100, name: "Continue" },
 		{ code: 101, name: "Switching Protocols" },
-		{ code: 102, name: "Processing", }
+		// { code: 102, name: "Processing", }
 	]
 }
 
@@ -15,13 +15,13 @@ const STATUS_200 = {
 		{ code: 200, name: "OK" },
 		{ code: 201, name: "Created" },
 		{ code: 202, name: "Accepted" },
-		{ code: 203, name: "Non-authoritative Information" },
+		// { code: 203, name: "Non-authoritative Information" },
 		{ code: 204, name: "No Content" },
-		{ code: 205, name: "Reset Content" },
+		// { code: 205, name: "Reset Content" },
 		{ code: 206, name: "Partial Content" },
-		{ code: 207, name: "Multi-STATUS" },
-		{ code: 208, name: "Already Reported" },
-		{ code: 226, name: "IM Used" },
+		{ code: 207, name: "Multi-Status" },
+		// { code: 208, name: "Already Reported" },
+		// { code: 226, name: "IM Used" },
 	]
 }
 
@@ -35,7 +35,7 @@ const STATUS_300 = {
 		{ code: 304, name: "Not Modified" },
 		{ code: 305, name: "Use Proxy" },
 		{ code: 307, name: "Temporary Redirect" },
-		{ code: 308, name: "Permanent Redirect" },
+		// { code: 308, name: "Permanent Redirect" },
 	]
 }
 
@@ -49,7 +49,7 @@ const STATUS_400 = {
 		{ code: 404, name: "Not Found" },
 		{ code: 405, name: "Method Not Allowed" },
 		{ code: 406, name: "Not Acceptable" },
-		{ code: 407, name: "Proxy Authentication Required" },
+		// { code: 407, name: "Proxy Authentication Required" },
 		{ code: 408, name: "Request Timeout" },
 		{ code: 409, name: "Conflict" },
 		{ code: 410, name: "Gone" },
@@ -66,12 +66,12 @@ const STATUS_400 = {
 		{ code: 423, name: "Locked" },
 		{ code: 424, name: "Failed Dependency" },
 		{ code: 426, name: "Upgrade Required" },
-		{ code: 428, name: "Precondition Required" },
+		// { code: 428, name: "Precondition Required" },
 		{ code: 429, name: "Too Many Requests" },
 		{ code: 431, name: "Request Header Fields Too Large" },
 		{ code: 444, name: "Connection Closed Without Response" },
 		{ code: 451, name: "Unavailable For Legal Reasons" },
-		{ code: 499, name: "Client Closed Request" },
+		// { code: 499, name: "Client Closed Request" },
 	]
 }
 
@@ -79,11 +79,11 @@ const STATUS_500 = {
 	name: "5xx Server Error",
 	codes: [
 		{ code: 500, name: "Internal Server Error" },
-		{ code: 501, name: "Not Implemented" },
+		// { code: 501, name: "Not Implemented" },
 		{ code: 502, name: "Bad Gateway" },
 		{ code: 503, name: "Service Unavailable" },
 		{ code: 504, name: "Gateway Timeout" },
-		{ code: 505, name: "HTTP Version Not Supported" },
+		// { code: 505, name: "HTTP Version Not Supported" },
 		{ code: 506, name: "Variant Also Negotiates" },
 		{ code: 507, name: "Insufficient Storage" },
 		{ code: 508, name: "Loop Detected" },

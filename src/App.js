@@ -7,7 +7,7 @@ import MOCK_DATA from './mockdata';
 class App extends Component {
    render() {
       return (
-         <Tiles model={MOCK_DATA} brand="Tiles"/>
+         <Tiles model={MOCK_DATA} brand="HTTP Status Codes"/>
       );
    }
 }

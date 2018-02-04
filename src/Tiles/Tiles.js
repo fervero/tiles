@@ -7,10 +7,15 @@ const applySearch = (search) => (
 	(obj) => Object.assign({}, obj, { search })
 )
 
+const copyModel = (model) => (
+	JSON.parse(JSON.stringify(model))
+		.map(({ ...properties }, index) => ({ ...properties, index }))
+);
+
 class Tiles extends Component {
 	constructor(props) {
 		super(props);
-		this.model = JSON.parse(JSON.stringify(props.model));
+		this.model = copyModel(props.model);
 		const tilesList = this.model
 			.map(() => false);
 		this.brand = props.brand;
@@ -18,38 +23,39 @@ class Tiles extends Component {
 			search: "",
 			tileIsPinned: tilesList
 		};
-		this.updateSearch = this.updateSearch.bind(this);
-		this.togglePinned = this.togglePinned.bind(this);
-		this.makeTile = this.makeTile.bind(this);
 	}
 
-	makeTile = ({ name, entries, search }, index) => (
-		<div className="tiles_container" key={name}>
-			<Tile name={name} entries={entries} search={search} toggle={this.togglePinned} pinned={this.state.tileIsPinned[index]}/>
-		</div>
-	)
+	makeTile = ({ index, ...props }) => {
+		return (
+			<div className="tiles_container" key={`/${index}`}>
+				<Tile
+					index={index}
+					id={`/${index}`}
+					{...props}
+					toggle={this.togglePinned.bind(this, index)}
+					pinned={this.state.tileIsPinned[index]} />
+			</div>
+		)
+	}
 
-	updateSearch(e) {
+	updateSearch = (e) => {
 		const search = e.target.value.toLowerCase();
 		this.setState({ search });
 	}
 
-	togglePinned(tileName) {
-		const foundTile = this.model
-			.findIndex(({ name }) => name === tileName);
+	togglePinned (index) {
 		const newStatus = this.state.tileIsPinned
-			.map((val, i) => i === foundTile ? !val : val);
+			.map((val, i) => i === index ? !val : val);
 		this.setState(Object.assign(
 			{}, this.state, { tileIsPinned: newStatus }
 		));
-		setTimeout(() => console.log(this.state), 50);
 	}
 
 	/**
-	 * Tiles stays on display if it's pinned or if its name contains the search term.
+	 * A tile is displayed if it's pinned or if its name contains the search term.
 	 */
 	filterTiles = (search) => (
-		({ name }, index) => (
+		({ name, index }) => (
 			name.toLowerCase().includes(search.toLowerCase())
 		) || (this.state.tileIsPinned[index])
 	)
