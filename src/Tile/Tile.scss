@@ -9,12 +9,44 @@
 	color: $gray-800;
 }
 
-.tile__header {
-	font-size: 1.25rem;
-	color: $gray-900;
+.list-group-header {
+	height: 2.5em;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 }
 
-.list-group-header {
+.tile__header {
 	@extend .h6;
 	padding-left: 1.25rem;
+	color: $gray-900;
+	display: inline-block;
+	vertical-align: middle;
 }
+
+.tile__btn {
+	width: 15%;
+	padding: 5px 0 0;
+	box-sizing: border-box;
+	display: inline-block;
+	align-self: center;
+
+}
+
+.example-enter {
+	opacity: 0.01;
+ }
+ 
+ .example-enter.example-enter-active {
+	opacity: 1;
+	transition: opacity 1500ms ease-in;
+ }
+ 
+ .example-leave {
+	opacity: 1;
+ }
+ 
+ .example-leave.example-leave-active {
+	opacity: 0.01;
+	transition: opacity 1500ms ease-in;
+ }
