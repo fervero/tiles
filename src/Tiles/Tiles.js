@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { string, shape, arrayOf } from 'prop-types';
 import Tile from '../Tile/Tile';
 import Navbar from '../Navbar/Navbar';
 import './Tiles.css';
@@ -13,6 +14,22 @@ const copyModel = (model) => (
 );
 
 class Tiles extends Component {
+	static propTypes = {
+		/**
+		 * Name to be displayed on the component's navbar.
+		 */
+		brand: string,
+		/**
+		 * Data to be displayed.
+		 */
+		model: arrayOf(shape({
+			name: string,
+			entries: arrayOf(shape({
+				description: string.isRequired,
+				externalURL: string
+			}))
+		}))
+	}
 	constructor(props) {
 		super(props);
 		this.model = copyModel(props.model);
@@ -43,7 +60,7 @@ class Tiles extends Component {
 		this.setState({ search });
 	}
 
-	togglePinned (index) {
+	togglePinned(index) {
 		const newStatus = this.state.tileIsPinned
 			.map((val, i) => i === index ? !val : val);
 		this.setState(Object.assign(

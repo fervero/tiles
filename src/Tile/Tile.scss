@@ -2,11 +2,12 @@
 
 .tile {
 	max-height: 20em;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	padding: 1rem;
 	overflow: scroll;
 	overflow-x: hidden;
 	color: $gray-800;
+
 }
 
 .list-group-header {
